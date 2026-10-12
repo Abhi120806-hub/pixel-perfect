@@ -8,3 +8,4 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+- Portfolio content lives in src/lib/profile.ts; the 3D scene is lazy-loaded client-only so it never runs during server rendering.
