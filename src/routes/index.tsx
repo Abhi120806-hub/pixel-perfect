@@ -53,8 +53,9 @@ function Backdrop() {
 }
 
 function Layer({ v, i, p }: { v: string; i: number; p: ReturnType<typeof useScroll>["scrollYProgress"] }) {
-  const prev = STOPS[Math.max(0, i - 1)];
-  const opacity = useTransform(p, i === 0 ? [0, 1] : [prev, STOPS[i]], i === 0 ? [1, 1] : [0, 1]);
+  const prev = STOPS[Math.max(0, i - 1)] ?? 0;
+  const cur = STOPS[i] ?? 1;
+  const opacity = useTransform(p, i === 0 ? [0, 1] : [prev, cur], i === 0 ? [1, 1] : [0, 1]);
   return <motion.div className="absolute inset-0" style={{ background: `var(${v})`, opacity }} />;
 }
 
@@ -188,7 +189,7 @@ function About() {
 
 function Skills() {
   const [sel, setSel] = useState(0);
-  const s = profile.skills[sel];
+  const s = profile.skills[sel] ?? profile.skills[0]!;
   return (
     <section id="skills" className="px-6 py-32 sm:px-12">
       <div className="mx-auto max-w-7xl">
