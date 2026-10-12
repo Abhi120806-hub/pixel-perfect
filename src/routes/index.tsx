@@ -234,7 +234,7 @@ function Projects() {
       <div className="mx-auto max-w-7xl">
         <SectionHead k="03 — Missions" title="Featured work" />
         <Reveal>
-          <TiltCard className="grid gap-8 p-6 sm:p-10 lg:grid-cols-2">
+          <TiltCard className="p-6 sm:p-10"><div className="grid gap-8 lg:grid-cols-2">
             <div className="relative flex aspect-video items-end overflow-hidden rounded-xl border border-border p-4" style={{ background: "linear-gradient(160deg, color-mix(in oklab, var(--glow) 25%, transparent), transparent)" }}>
               <svg viewBox="0 0 200 80" className="absolute inset-0 h-full w-full" aria-hidden>
                 <motion.path d="M0 60 L20 52 L40 56 L60 38 L80 44 L100 26 L120 34 L140 18 L160 24 L180 10 L200 14" fill="none" stroke="var(--glow)" strokeWidth="1.5"
@@ -254,7 +254,7 @@ function Projects() {
                 <Btn href={featured.github}><FaExternalLinkAlt aria-hidden /> Details</Btn>
               </div>
             </div>
-          </TiltCard>
+          </div></TiltCard>
         </Reveal>
         <Reveal delay={0.1} className="mt-6">
           <div className="rounded-2xl border border-dashed border-border p-8 text-center opacity-70">More missions launching soon — follow along on GitHub.</div>
