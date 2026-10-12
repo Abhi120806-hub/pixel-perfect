@@ -16,11 +16,11 @@ export function Nav({ go }: { go: (id: string) => void }) {
   return (
     <motion.nav aria-label="Main" style={{ paddingTop: pad, paddingBottom: pad, width }}
       className="fixed left-1/2 top-4 z-50 flex -translate-x-1/2 items-center justify-between rounded-full glass px-4">
-      <button onClick={() => go("home")} className="font-display text-lg font-bold text-starlight">AP<span className="text-glow">.</span></button>
+      <button onClick={() => go("home")} className="font-display text-lg font-bold">AP<span className="text-glow">.</span></button>
       <ul className="flex gap-1 overflow-x-auto">
         {sections.slice(1).map((s) => (
           <li key={s}>
-            <button onClick={() => go(s)} aria-current={active === s} className="relative rounded-full px-3 py-1.5 text-xs capitalize text-starlight/80 hover:text-starlight sm:text-sm">
+            <button onClick={() => go(s)} aria-current={active === s} className="relative rounded-full px-3 py-1.5 text-xs capitalize opacity-80 hover:opacity-100 sm:text-sm">
               {active === s && <motion.span layoutId="pill" className="absolute inset-0 rounded-full bg-glow/20 ring-1 ring-glow/40" transition={{ type: "spring", stiffness: 300, damping: 30 }} />}
               <span className="relative">{s}</span>
             </button>
