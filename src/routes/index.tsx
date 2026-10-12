@@ -228,7 +228,7 @@ function Skills() {
 }
 
 function Projects() {
-  const [featured] = profile.projects;
+  const featured = profile.projects[0]!;
   return (
     <section id="projects" className="px-6 py-32 sm:px-12">
       <div className="mx-auto max-w-7xl">
